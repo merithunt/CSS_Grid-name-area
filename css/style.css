@@ -1,0 +1,124 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 2.5fr 1fr 1.25fr 0.75fr;
+    grid-template-areas: 
+    "nav main"
+    "content1 content1"
+    "content2 footer"
+    "content2 sidebar"
+    "content3 content3"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    align-items: center;
+    display: grid;
+    background-color: pink;
+    grid-area: nav;
+    padding: var(--my-padding);
+}
+
+
+.content1 {
+    align-items: center;
+    display: grid;
+    background-color: tomato;
+    grid-area: content1;
+    padding: var(--my-padding);
+}
+
+.content2 {
+    align-items: center;
+    display: grid;
+    background-color: violet;
+    grid-area: content2;
+    padding: var(--my-padding);
+}
+
+.content3 {
+    align-items: center;
+    display: grid;
+    background-color: seagreen;
+    grid-area: content3;
+    padding: var(--my-padding);
+}
+
+.sidebar {
+    align-items: center;
+    display: grid;
+    background-color: goldenrod;
+    grid-area: sidebar;
+    padding: var(--my-padding);
+}
+
+main {
+    align-items: center;
+    display: grid;
+    background-color:burlywood;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+footer {
+    align-items: center;
+    display: grid;
+    background-color: mediumturquoise;
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        grid-template-columns: 1fr 1.5fr 1fr;
+        grid-template-rows: 0.5fr 1.5fr 1fr 1fr 1fr 0.75fr;
+        grid-template-areas: 
+        "nav nav nav"
+        "content1 content1 content1"
+        "main content2 content2"
+        "main content2 content2"
+        "main content3 content3"
+        "main sidebar footer"
+        ;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .sidebar {
+        align-items: center;
+        display: grid;
+    }
+    .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1.25fr 1.75fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "sidebar"
+        "footer"
+        ;
+    }
+}
